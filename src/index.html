@@ -249,6 +249,15 @@
                         "block";
                       document.getElementById("clear-button").style.display =
                         "block";
+
+                      // Add click event to images
+                      document
+                        .querySelectorAll(".blog-post-content img")
+                        .forEach((img) => {
+                          img.addEventListener("click", function () {
+                            this.classList.toggle("enlarged");
+                          });
+                        });
                     })
                     .catch((error) =>
                       console.error("Error loading markdown:", error)
@@ -279,11 +288,11 @@
                         tr.dataset.tags = tags.join(", ");
 
                         tr.innerHTML = `
-							<td>${title}</td>
-							<td>${date}</td>
-							<td>${tags.join(", ")}</td>
-							<td><a href="#" class="read-button" onclick="loadMarkdown(event, '${url}')">Read</a></td>
-						  `;
+            <td>${title}</td>
+            <td>${date}</td>
+            <td>${tags.join(", ")}</td>
+            <td><a href="#" class="read-button" onclick="loadMarkdown(event, '${url}')">Read</a></td>
+          `;
 
                         tbody.appendChild(tr);
                       })
@@ -305,8 +314,17 @@
         </section>
 
         <style>
-          .blog-post-content {
-            margin-top: 20px;
+          .blog-post-content img {
+            max-width: 100%;
+            height: auto;
+            max-height: 600px;
+            cursor: pointer;
+            transition: transform 0.3s;
+          }
+          .blog-post-content img.enlarged {
+            transform: scale(1.3);
+            z-index: 1000;
+            position: relative;
           }
           .table-wrapper {
             margin-top: 20px;
