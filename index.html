@@ -14,11 +14,11 @@
     />
     <link rel="stylesheet" href="assets/css/main.css" />
     <script>
-      document.addEventListener('DOMContentLoaded', (event) => {
+      document.addEventListener("DOMContentLoaded", (event) => {
         document.title = "Juraj Zvolensky";
-        const titleBar = document.getElementById('titleBar');
+        const titleBar = document.getElementById("titleBar");
         if (titleBar) {
-          const titleElement = titleBar.querySelector('.title');
+          const titleElement = titleBar.querySelector(".title");
           if (titleElement) {
             titleElement.textContent = document.title;
           }
@@ -261,11 +261,11 @@
                         "block";
                       document.getElementById("clear-button").style.display =
                         "block";
-
-                      // Add click event to images
+                        
                       document
                         .querySelectorAll(".blog-post-content img")
                         .forEach((img) => {
+                          img.setAttribute("loading", "lazy");
                           img.addEventListener("click", function () {
                             this.classList.toggle("enlarged");
                           });
@@ -300,11 +300,11 @@
                         tr.dataset.tags = tags.join(", ");
 
                         tr.innerHTML = `
-            <td>${title}</td>
-            <td>${date}</td>
-            <td>${tags.join(", ")}</td>
-            <td><a href="#" class="read-button" onclick="loadMarkdown(event, '${url}')">Read</a></td>
-          `;
+                          <td>${title}</td>
+                          <td>${date}</td>
+                          <td>${tags.join(", ")}</td>
+                          <td><a href="#" class="read-button" onclick="loadMarkdown(event, '${url}')">Read</a></td>
+                        `;
 
                         tbody.appendChild(tr);
                       })
@@ -365,42 +365,6 @@
             transform: scale(1);
           }
         </style>
-
-        <section id="five">
-          <div class="container">
-            <h3>Contact me</h3>
-            <ul class="icons">
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/juraj-zvolensk%C3%BD-101672173/"
-                  class="icon brands fa-linkedin"
-                  ><span class="label">LinkedIn</span></a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://x.com/jurajzvolensky"
-                  class="icon brands fa-twitter"
-                  ><span class="label">Twitter</span></a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://github.com/jzvolensky"
-                  class="icon brands fa-github"
-                  ><span class="label">Github</span></a
-                >
-              </li>
-              <li>
-                <a
-                  href="mailto:juro.zvolensky@gmail.com"
-                  class="icon solid fa-envelope"
-                  ><span class="label">Email</span></a
-                >
-              </li>
-            </ul>
-          </div>
-        </section>
         <!-- Five -->
         <!--
 							<section id="five">
