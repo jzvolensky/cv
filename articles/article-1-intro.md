@@ -22,4 +22,4 @@ I think that is all for now. I spent today building this website so I do not hav
 
 Since in the introduction I mentioned that I like travelling here is a picture from one of my recent travels in Northern Italy:
 
-![Northern Italy](images/article-1-pic-1.jpeg)
+![Northern Italy](articles/images/article-1-pic-1.jpeg)
