@@ -13,6 +13,18 @@
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.title = "Juraj Zvolensky";
+        const titleBar = document.getElementById('titleBar');
+        if (titleBar) {
+          const titleElement = titleBar.querySelector('.title');
+          if (titleElement) {
+            titleElement.textContent = document.title;
+          }
+        }
+      });
+    </script>
   </head>
   <body class="is-preload">
     <!-- Header -->
